@@ -25,7 +25,7 @@ function generatePassword () {
 
   //parseInt() changes input value into an integer value
   passwordLength = parseInt(prompt("Enter a numerical character length, must be between 8-128 characters"));
-
+console.log(passwordLength)
   //if statements to determine if "length" value is Nan, lower than 8, or larger than 128. Returns false if input is invalid
   if (isNaN(length)) {
       alert("Invalid input type, only enter numeric characters.");
@@ -53,9 +53,11 @@ function generatePassword () {
   if (confirm("Include special characters in your password? (Ex.!@#$%?)")) {
       passMix = passMix.concat(spec);
       }
-      var generatedPassword
+      var generatedPassword = ""
+      console.log(passMix)
+      console.log(passwordLength)
       for (let i = 0; i < passwordLength; i++) {
-        generatedPassword=passMix[Math.floor(Math.random()*passMix.length)]
+        generatedPassword+=passMix[Math.floor(Math.random()*passMix.length)]
       }
       return generatedPassword 
     }
